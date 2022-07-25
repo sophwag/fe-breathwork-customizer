@@ -8,7 +8,7 @@ function App() {
       <header> Breathwork Customizer</header>
       <section>
         <h1>APP TITLE</h1>
-        <p>Customizer goes here</p>
+        <p>Customizer goes here.</p>
       </section>
     </div>
   );
