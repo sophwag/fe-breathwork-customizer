@@ -1,6 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+const URL = "https://backend-breath-capstone.herokuapp.com/test_dict"
+// const getSound = () => {
+//   axios
+//     .get(URL)
+//     .then((res) => {
+//       const newDrivers = res.data.map((driver) => {
+//         return {
+//           id: driver.id,
+//           name: driver.name,
+//           country: driver.country,
+//           team: driver.team,
+//           cars: driver.cars,
+//           handsome: driver.handsome,
+//         };
+//       });
+//       setDrivers(newDrivers);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// };
 
 function App() {
   return (
@@ -9,6 +30,9 @@ function App() {
       <section>
         <h1>APP TITLE</h1>
         <p>Customizer goes here.</p>
+        <button>GET AUDIO!</button>
+        {/* <button onClick={getSound}>GET AUDIO!</button> */}
+
       </section>
     </div>
   );
