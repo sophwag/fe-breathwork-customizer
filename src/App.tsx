@@ -72,10 +72,10 @@ function App() {
 
   return (
     <div className="App">
-      <header> Breathwork Customizer</header>
+      <header></header>
       <section>
-        <h1>APP TITLE</h1>
-        <p>Customizer below.</p>
+        <h1>BREATHWORK CUSTOMIZER</h1>
+        <p>Input your preferences to get a customized guided breathing session. </p>
         {/* <AudioForm getDictCallback={getDict} getStaticSoundCallback={getStaticSound} /> */}
         <NewSoundForm getCustomAudioCallback={getCustomAudio} />
         <AudioDisplay dictDisplay={dictDisplay} soundDisplay={soundDisplay} src={src} />
