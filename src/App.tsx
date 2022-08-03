@@ -8,8 +8,8 @@ import AudioDisplay from "./components/AudioDisplay";
 import NewSoundForm from "./components/NewSoundForm";
 
 function App() {
-  const [dictDisplay, setDictDisplay] = useState(["hi"]);
-  const [soundDisplay, setSoundDisplay] = useState(["sound"]);
+  const [dictDisplay, setDictDisplay] = useState<any>([]);
+  const [soundDisplay, setSoundDisplay] = useState<any>([]);
   const [src, setSrc] = useState("");
 
   // const DICT_URL = "https://backend-breath-capstone.herokuapp.com/test_dict"
@@ -37,6 +37,7 @@ function App() {
 
 
   const getCustomAudio = (request_data: any) => {
+    setDictDisplay([1]);
     axios({
       url: CUSTOM_AUDIO_URL,
       method: "get",
