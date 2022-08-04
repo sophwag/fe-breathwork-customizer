@@ -2,6 +2,8 @@ import { useState } from "react";
 
 const defaultAudio: any = {
     // durations: "",
+    selectedPattern: "",
+    customPattern: "",
     pattern: "",
     patternError: "",
     sound: "test",
@@ -9,22 +11,39 @@ const defaultAudio: any = {
     durationError: "",
 };
 
-const NewSoundForm = (props:any) => {
+const CustomSoundForm = (props:any) => {
     const [formData, setFormData] = useState(defaultAudio);
 
     const onFormChange = (event: any) => {
-    const stateName = event.target.name;
-    const inputValue = event.target.value;
-    console.log(stateName);
-    console.log(inputValue);
+        const stateName = event.target.name;
+        const inputValue = event.target.value;
+        console.log(stateName);
+        console.log(inputValue);
 
-    const newFormData = { ...formData };
-    newFormData[stateName] = inputValue;
-    newFormData["durationError"] = "";
-    newFormData["patternError"] = "";
+        const newFormData = { ...formData };
+        newFormData[stateName] = inputValue;
+        newFormData["durationError"] = "";
+        newFormData["patternError"] = "";
+        // tracking which of the radio buttons is selected
+        if (stateName === "pattern") {
+            newFormData["selectedPattern"] = event.target.id;
+        }
 
-    setFormData(newFormData);
+        setFormData(newFormData);
     };
+
+
+    const onOtherPatternInputChange = (event: any) => {
+        const inputValue = event.target.value;
+        console.log(inputValue);
+
+        const newFormData = { ...formData };
+        newFormData["customPattern"] = inputValue;
+        if (formData["selectedPattern"] === "other") {
+            newFormData["pattern"] = inputValue;
+        };
+        setFormData(newFormData);
+        }
     
     const validatePatternInput = () => {
         if (!formData.pattern) {
@@ -100,6 +119,7 @@ const NewSoundForm = (props:any) => {
             newFormData["durationError"] = duration_error_msg;
             newFormData["patternError"] = pattern_error_msg;
             setFormData(newFormData);
+            props.setDictDisplay([]);
             return false;
         };
 
@@ -117,21 +137,16 @@ const NewSoundForm = (props:any) => {
 
     return (
     <form onSubmit={handleSubmit}>
-        <label htmlFor="sound">Choose a type of sound:</label>
+
+        <label htmlFor="sound">Choose a type of sound </label>
         <select name="sound" value={formData.name} onChange={onFormChange}>
             <option value="test">test</option>
             <option value="synth">synth</option>
             <option value="piano">piano</option>
         </select>
-        <label htmlFor="pattern"> Breathing Pattern</label>
-        <input
-        type="text"
-        name="pattern"
-        value={formData.pattern}
-        onChange={onFormChange}
-        />
-        <div>{formData.patternError}</div>
-        <label htmlFor="duration">Duration</label>
+
+        <p></p>
+        <label htmlFor="duration">Pick your duration (in minutes, 1-20) </label>
         <input
         type="text"
         name="duration"
@@ -139,6 +154,63 @@ const NewSoundForm = (props:any) => {
         onChange={onFormChange}
         />
         <div>{formData.durationError}</div>
+
+        <p></p>
+        <label htmlFor="patterns"> Pick a breathing pattern</label>
+
+        <p></p>
+        <input
+        type="radio"
+        name="pattern"
+        id="box"
+        value="4-4-4-4"
+        onClick={onFormChange}
+        />
+        <label htmlFor="box">Box Breathing (4-4-4-4)</label>
+        
+        <p></p>
+        <input
+        type="radio"
+        name="pattern"
+        id="resonant"
+        value= "6-0-6-0"
+        onClick={onFormChange}
+        />
+        <label htmlFor="resonant">Resonant (6-0-6-0) </label>
+
+        <p></p>
+        <input
+        type="radio"
+        name="pattern"
+        id="relaxation"
+        // value={formData.pattern}
+        value="4-7-8-0"
+        onClick={onFormChange}
+        />
+        <label htmlFor="relaxation">Relaxation (4-7-8-0) </label>
+
+        <p></p>
+        <input
+        type="radio"
+        name="pattern"
+        id="other"
+        value={formData.customPattern}
+        onClick={onFormChange}
+        />
+        <label htmlFor="other">Other: select your own </label>
+        <input id="inputother" type="text" name="otherPattern" onChange={onOtherPatternInputChange}></input>
+        <p></p>
+
+        {/* <label htmlFor="pattern"> Breathing Pattern</label>
+        <input
+        type="text"
+        name="pattern"
+        value={formData.pattern}
+        onChange={onFormChange}
+        /> */}
+        <div>{formData.patternError}</div>
+        <p></p>
+       
         {/* <label htmlFor="durations">Length (between 0 and 10 minutes):</label>
         <input type="range" id="durations" name="durations" min="0" max="10" value={formData.name}
         onChange={onFormChange}></input> */}
@@ -150,4 +222,4 @@ const NewSoundForm = (props:any) => {
 };
 
 
-export default NewSoundForm;
+export default CustomSoundForm;

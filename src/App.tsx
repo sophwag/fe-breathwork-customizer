@@ -5,7 +5,7 @@ import {useState} from "react";
 import axios from "axios";
 // import AudioForm from "./components/AudioForm";
 import AudioDisplay from "./components/AudioDisplay";
-import NewSoundForm from "./components/NewSoundForm";
+import CustomSoundForm from "./components/CustomSoundForm";
 
 function App() {
   const [dictDisplay, setDictDisplay] = useState<any>([]);
@@ -76,8 +76,7 @@ function App() {
       <section>
         <h1>BREATHWORK CUSTOMIZER</h1>
         <p>Input your preferences to get a customized guided breathing session. </p>
-        {/* <AudioForm getDictCallback={getDict} getStaticSoundCallback={getStaticSound} /> */}
-        <NewSoundForm getCustomAudioCallback={getCustomAudio} />
+        <CustomSoundForm getCustomAudioCallback={getCustomAudio} dictDisplay={dictDisplay} setDictDisplay={setDictDisplay} />
         <AudioDisplay dictDisplay={dictDisplay} soundDisplay={soundDisplay} src={src} />
       </section>
     </div>
