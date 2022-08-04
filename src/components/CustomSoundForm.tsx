@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 const defaultAudio: any = {
-    // durations: "",
     selectedPattern: "",
     customPattern: "",
     pattern: "",
@@ -12,47 +11,45 @@ const defaultAudio: any = {
 };
 
 const CustomSoundForm = (props:any) => {
+
     const [formData, setFormData] = useState(defaultAudio);
 
     const onFormChange = (event: any) => {
         const stateName = event.target.name;
         const inputValue = event.target.value;
-        // console.log(stateName);
-        // console.log(inputValue);
 
         const newFormData = { ...formData };
         newFormData[stateName] = inputValue;
         newFormData["durationError"] = "";
         newFormData["patternError"] = "";
-        // tracking which of the radio buttons is selected
+        // tracking whether a radio button was selected
         if (stateName === "pattern") {
             newFormData["selectedPattern"] = event.target.id;
         }
-
         setFormData(newFormData);
     };
 
 
     const onOtherPatternInputChange = (event: any) => {
-        const inputValue = event.target.value;
-        // console.log(inputValue);
 
+        const inputValue = event.target.value;
         const newFormData = { ...formData };
         newFormData["customPattern"] = inputValue;
         if (formData["selectedPattern"] === "other") {
             newFormData["pattern"] = inputValue;
         };
         setFormData(newFormData);
-        }
+    };
     
     const validatePatternInput = () => {
+
         if (!formData.pattern) {
             return false
         }
         let dash_count = 0
         let i = 0
         let s = formData.pattern
-        while (dash_count < 4 && i < (formData.pattern.length-1)) {
+        while (dash_count < 4 && i < (s.length-1)) {
             if (i === 0) {
                 if (isNaN(s[i])) {
                     return false
@@ -60,6 +57,9 @@ const CustomSoundForm = (props:any) => {
                 else {
                     i += 1
                 }
+            }
+            else if (s[i] === " ") {
+                return false
             }
             else if (s[i] === "-") {
                 if (isNaN(s[i-1]) || isNaN(s[i+1])) {
@@ -80,13 +80,13 @@ const CustomSoundForm = (props:any) => {
             return false
         }
 
-        if (dash_count === 3 && i === (formData.pattern.length - 1)) {
+        if (dash_count === 3 && i === (s.length - 1)) {
             return true
         }
         else {
             return false
         }    
-        };
+    };
 
     const validateDurationInput = () => {
         if (!formData.duration || isNaN(formData.duration)) {
@@ -98,7 +98,7 @@ const CustomSoundForm = (props:any) => {
         else {
             return true
         };
-        };
+    };
 
     const validateInput = () => {
         let duration_error_msg = "";
@@ -111,14 +111,15 @@ const CustomSoundForm = (props:any) => {
 
         let patternValid = validatePatternInput();
         if (!patternValid) {
-            pattern_error_msg = "Pattern must be written as X-X-X-X, such as 4-7-8-0";
+            pattern_error_msg = "Please select an option, and ensure pattern is written as X-X-X-X, such as 4-7-8-0";
         };
 
-        if (duration_error_msg || pattern_error_msg) {
-            const newFormData = { ...formData };
+        const newFormData = { ...formData };
             newFormData["durationError"] = duration_error_msg;
             newFormData["patternError"] = pattern_error_msg;
             setFormData(newFormData);
+
+        if (duration_error_msg || pattern_error_msg) {
             props.setAudioStatusDisplay({status: "idle"});
             return false;
         };
@@ -182,7 +183,6 @@ const CustomSoundForm = (props:any) => {
         type="radio"
         name="pattern"
         id="relaxation"
-        // value={formData.pattern}
         value="4-7-8-0"
         onClick={onFormChange}
         />
@@ -196,24 +196,13 @@ const CustomSoundForm = (props:any) => {
         value={formData.customPattern}
         onClick={onFormChange}
         />
-        <label htmlFor="other">Other: select your own </label>
+        <label htmlFor="other">Other (e.g., 4-2-10-0) </label>
         <input id="inputother" type="text" name="otherPattern" onChange={onOtherPatternInputChange}></input>
+        
         <p></p>
-
-        {/* <label htmlFor="pattern"> Breathing Pattern</label>
-        <input
-        type="text"
-        name="pattern"
-        value={formData.pattern}
-        onChange={onFormChange}
-        /> */}
         <div>{formData.patternError}</div>
-        <p></p>
-       
-        {/* <label htmlFor="durations">Length (between 0 and 10 minutes):</label>
-        <input type="range" id="durations" name="durations" min="0" max="10" value={formData.name}
-        onChange={onFormChange}></input> */}
 
+        <p></p>
         <input type="submit" value="Get custom audio!" />
         
     </form>

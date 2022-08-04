@@ -8,6 +8,9 @@ const AudioDisplay = (props: any) => {
     if (props.audioStatusDisplay.status === 'idle') {
         return (<div> </div>)
     }
+    else if (props.audioStatusDisplay.status === 'failed request') {
+        return (<div> <p>Sorry, the requested audio isn't available. Please try something else.</p> </div>)
+    }
     else if (props.audioStatusDisplay.status === 'awaiting audio') {
         return (<div><div> <p></p> <p>Loading your sound</p> </div> <div className="lds-ring"><div></div><div></div><div></div><div></div></div></div>)
     }

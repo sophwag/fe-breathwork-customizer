@@ -31,6 +31,7 @@ function App() {
       })
       .catch((err: any) => {
         console.log(err);
+        setAudioStatusDisplay({status: "failed request"});
       });
   };
 
