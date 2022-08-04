@@ -17,8 +17,8 @@ const CustomSoundForm = (props:any) => {
     const onFormChange = (event: any) => {
         const stateName = event.target.name;
         const inputValue = event.target.value;
-        console.log(stateName);
-        console.log(inputValue);
+        // console.log(stateName);
+        // console.log(inputValue);
 
         const newFormData = { ...formData };
         newFormData[stateName] = inputValue;
@@ -35,7 +35,7 @@ const CustomSoundForm = (props:any) => {
 
     const onOtherPatternInputChange = (event: any) => {
         const inputValue = event.target.value;
-        console.log(inputValue);
+        // console.log(inputValue);
 
         const newFormData = { ...formData };
         newFormData["customPattern"] = inputValue;
@@ -119,7 +119,7 @@ const CustomSoundForm = (props:any) => {
             newFormData["durationError"] = duration_error_msg;
             newFormData["patternError"] = pattern_error_msg;
             setFormData(newFormData);
-            props.setDictDisplay([]);
+            props.setAudioStatusDisplay({status: "idle"});
             return false;
         };
 
@@ -130,7 +130,6 @@ const CustomSoundForm = (props:any) => {
         event.preventDefault();
         const isInputValid = validateInput();
         if (isInputValid) {
-            console.log(formData)
             props.getCustomAudioCallback(formData);
             }
     };
