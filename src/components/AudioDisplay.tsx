@@ -18,14 +18,14 @@ const AudioDisplay = (props: any) => {
         return (
         <div>
             <p>Your breathwork session is ready! Below is your {props.audioStatusDisplay.duration} minute guided {props.audioStatusDisplay.selectedPattern} breathing with {props.audioStatusDisplay.sound} sound.</p>
-        <audio controls src={props.src}></audio>
+        <audio controls src={props.audioSrc}></audio>
         </div>)
         }
     else {
         return (
         <div>
             <p>Your breathwork session is ready! Below is your {props.audioStatusDisplay.duration} minute guided {props.audioStatusDisplay.pattern} breathing with {props.audioStatusDisplay.sound} sound.</p>
-            <audio controls src={props.src}></audio>
+            <audio controls src={props.audioSrc}></audio>
         </div>)
         }
     };

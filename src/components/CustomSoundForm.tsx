@@ -131,7 +131,7 @@ const CustomSoundForm = (props:any) => {
         event.preventDefault();
         const isInputValid = validateInput();
         if (isInputValid) {
-            props.getCustomAudioCallback(formData);
+            props.getCustomAudio(formData);
             }
     };
 
