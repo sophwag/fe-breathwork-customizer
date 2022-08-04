@@ -20,6 +20,8 @@ const NewSoundForm = (props:any) => {
 
     const newFormData = { ...formData };
     newFormData[stateName] = inputValue;
+    newFormData["durationError"] = "";
+    newFormData["patternError"] = "";
 
     setFormData(newFormData);
     };
@@ -50,6 +52,9 @@ const NewSoundForm = (props:any) => {
             else if (!isNaN(s[i])) {
                 i += 1
             }
+            else {
+                return false
+            };
             };
         
         if (isNaN(s[s.length-1])) {
@@ -62,13 +67,26 @@ const NewSoundForm = (props:any) => {
         else {
             return false
         }    
+        };
+
+    const validateDurationInput = () => {
+        if (!formData.duration || isNaN(formData.duration)) {
+            return false
         }
+        else if (formData.duration.includes(".") || Number(formData.duration) === 0 || Number(formData.duration) > 20) {
+            return false
+        }
+        else {
+            return true
+        };
+        };
 
     const validateInput = () => {
         let duration_error_msg = "";
         let pattern_error_msg = "";
 
-        if (!formData.duration || isNaN(formData.duration)) {
+        let durationValid = validateDurationInput();
+        if (!durationValid) {
             duration_error_msg = "Duration must be a whole number between 1 - 20";
         };
 
@@ -76,9 +94,6 @@ const NewSoundForm = (props:any) => {
         if (!patternValid) {
             pattern_error_msg = "Pattern must be written as X-X-X-X, such as 4-7-8-0";
         };
-        // if (!formData.pattern || typeof(formData.pattern) != "string" ) {
-        //     pattern_error_msg = "Pattern must be written as X-X-X-X, such as 4-7-8-0";
-        // };
 
         if (duration_error_msg || pattern_error_msg) {
             const newFormData = { ...formData };
@@ -86,8 +101,8 @@ const NewSoundForm = (props:any) => {
             newFormData["patternError"] = pattern_error_msg;
             setFormData(newFormData);
             return false;
-        }
-        
+        };
+
         return true;
     };
 
