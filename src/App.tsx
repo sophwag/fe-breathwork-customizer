@@ -5,6 +5,9 @@ import {useState} from "react";
 import axios from "axios";
 import AudioDisplay from "./components/AudioDisplay";
 import CustomSoundForm from "./components/CustomSoundForm";
+import PreFilled from "./components/PreFilled";
+
+
 
 function App() {
   const [audioStatusDisplay, setAudioStatusDisplay] = useState<any>({status: "idle"});
@@ -41,6 +44,7 @@ function App() {
         <p>Input your preferences to get a customized guided breathing session. </p>
         <CustomSoundForm getCustomAudio={getCustomAudio} setAudioStatusDisplay={setAudioStatusDisplay} />
         <AudioDisplay audioStatusDisplay={audioStatusDisplay} audioSrc={audioSrc} />
+        <PreFilled></PreFilled>
       </section>
     </div>
   );
