@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './CustomSoundForm.css';
 
 const defaultAudio: any = {
     selectedPattern: "",
@@ -136,27 +137,36 @@ const CustomSoundForm = (props:any) => {
     };
 
     return (
-    <form onSubmit={handleSubmit}>
+        <div className="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div className="row align-items-center g-lg-5 py-5">
+          <div className="col-lg-7 text-center text-lg-start">
+            <h1 className="display-4 fw-bold lh-1 mb-3">Breathwork Customizer</h1>
+            <p className="col-lg-10 fs-4">Input your preferences for sound, duration, and breathing pattern, and get a customized guided breathing session. </p>
+          </div>
+          <div className="col-md-10 mx-auto col-lg-5">    
+    <form className="p-4 p-md-5 border rounded-3 bg-light" onSubmit={handleSubmit}>
 
-        <label htmlFor="sound">Choose a type of sound </label>
-        <select name="sound" value={formData.name} onChange={onFormChange}>
+        <label htmlFor="sound" className="fw-bold">Choose a type of sound </label>
+        <p></p>
+        <select name="sound" value={formData.name} onChange={onFormChange} className="btn btn-outline-secondary btn-sm px-4">
             <option value="piano">piano</option>
             <option value="synth">synth</option>
             <option value="airy">airy</option>
         </select>
 
         <p></p>
-        <label htmlFor="duration">Pick your duration (in minutes, 1-20) </label>
+        <label htmlFor="duration" className="fw-bold">Pick your duration (in minutes, 1-20) </label>
         <input
         type="text"
         name="duration"
         value={formData.duration}
         onChange={onFormChange}
+        className="btn btn-outline-secondary btn-sm px-4"
         />
         <div>{formData.durationError}</div>
 
         <p></p>
-        <label htmlFor="patterns"> Pick a breathing pattern</label>
+        <label htmlFor="patterns" className="fw-bold"> Pick a breathing pattern</label>
 
         <p></p>
         <input
@@ -197,15 +207,18 @@ const CustomSoundForm = (props:any) => {
         onClick={onFormChange}
         />
         <label htmlFor="other">Other (e.g., 4-2-10-0) </label>
-        <input id="inputother" type="text" name="otherPattern" onChange={onOtherPatternInputChange}></input>
+        <input id="inputother" type="text" name="otherPattern" onChange={onOtherPatternInputChange} className="btn btn-outline-secondary btn-sm px-4"></input>
         
         <p></p>
         <div>{formData.patternError}</div>
 
         <p></p>
-        <input type="submit" value="Get custom audio!" />
+        <input type="submit" value="Get custom audio!" className="btn btn-outline-secondary btn-lg px-4 fw-bold"/>
         
     </form>
+    </div>
+    </div>
+  </div>
     );
 };
 

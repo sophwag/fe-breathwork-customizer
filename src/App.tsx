@@ -40,8 +40,8 @@ function App() {
     <div className="App">
       <header></header>
       <section>
-        <h1>BREATHWORK CUSTOMIZER</h1>
-        <p>Input your preferences to get a customized guided breathing session. </p>
+        {/* <h1>BREATHWORK CUSTOMIZER</h1>
+        <p>Input your preferences to get a customized guided breathing session. </p> */}
         <CustomSoundForm getCustomAudio={getCustomAudio} setAudioStatusDisplay={setAudioStatusDisplay} />
         <AudioDisplay audioStatusDisplay={audioStatusDisplay} audioSrc={audioSrc} />
         <PreFilled></PreFilled>
