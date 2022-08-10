@@ -5,7 +5,7 @@ const defaultAudio: any = {
     customPattern: "",
     pattern: "",
     patternError: "",
-    sound: "test",
+    sound: "piano",
     duration: "",
     durationError: "",
 };
@@ -140,9 +140,9 @@ const CustomSoundForm = (props:any) => {
 
         <label htmlFor="sound">Choose a type of sound </label>
         <select name="sound" value={formData.name} onChange={onFormChange}>
-            <option value="test">test</option>
-            <option value="synth">synth</option>
             <option value="piano">piano</option>
+            <option value="synth">synth</option>
+            <option value="airy">airy</option>
         </select>
 
         <p></p>
