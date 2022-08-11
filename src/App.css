@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Coiny');
+
+
 .App {
   text-align: center;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
@@ -38,6 +41,11 @@
   }
 }
 
+h1 {
+  color:#B1B7D1;
+  font-family: 'Coiny';
+  /* font-size: 32; */
+}
 /* .AudioForm label, input {
   display: block;
 } */

@@ -7,7 +7,7 @@ const defaultAudio: any = {
     pattern: "",
     patternError: "",
     sound: "piano",
-    duration: "",
+    duration: "1",
     durationError: "",
 };
 
@@ -138,16 +138,16 @@ const CustomSoundForm = (props:any) => {
 
     return (  
     <form className="m-2 p-2 p-md-5" onSubmit={handleSubmit}>
-        <label htmlFor="sound" className="fw-bold">Choose a type of sound </label>
+        <label htmlFor="sound" className="fw-bold">Sound </label>
         <p></p>
         <select name="sound" value={formData.name} onChange={onFormChange} className="btn btn-outline-secondary btn-sm px-4">
-            <option value="piano">piano</option>
-            <option value="synth">synth</option>
-            <option value="airy">airy</option>
+            <option value="piano">Piano</option>
+            <option value="synth">Synth</option>
+            <option value="airy">Airy</option>
         </select>
 
         <p></p>
-        <label htmlFor="duration" className="fw-bold">Pick your duration (in minutes, 1-20) </label>
+        <label htmlFor="duration" className="fw-bold">Duration (in minutes, 1-20) </label>
         <input 
         type="text"
         name="duration"
@@ -158,7 +158,7 @@ const CustomSoundForm = (props:any) => {
         <div>{formData.durationError}</div>
 
         <p></p>
-        <label htmlFor="patterns" className="fw-bold"> Pick a breathing pattern</label>
+        <label htmlFor="patterns" className="fw-bold"> Breathing pattern</label>
 
         <p></p>
         <input
@@ -205,7 +205,7 @@ const CustomSoundForm = (props:any) => {
         <div>{formData.patternError}</div>
 
         <p></p>
-        <input type="submit" value="Get custom audio!" className="btn btn-outline-secondary btn-lg px-4 fw-bold"/>
+        <input type="submit" value="Get custom audio" className="btn btn-outline-secondary btn-lg px-4 fw-bold"/>
         
     </form>
 
