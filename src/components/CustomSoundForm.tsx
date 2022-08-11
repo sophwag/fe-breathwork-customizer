@@ -136,16 +136,8 @@ const CustomSoundForm = (props:any) => {
             }
     };
 
-    return (
-        <div className="container col-xl-10 col-xxl-8 px-4 py-5">
-        <div className="row align-items-center g-lg-5 py-5">
-          <div className="col-lg-7 text-center text-lg-start">
-            <h1 className="display-4 fw-bold lh-1 mb-3">Breathwork Customizer</h1>
-            <p className="col-lg-10 fs-4">Input your preferences for sound, duration, and breathing pattern, and get a customized guided breathing session. </p>
-          </div>
-          <div className="col-md-10 mx-auto col-lg-5">    
-    <form className="p-4 p-md-5 border rounded-3 bg-light" onSubmit={handleSubmit}>
-
+    return (  
+    <form className="m-2 p-2 p-md-5" onSubmit={handleSubmit}>
         <label htmlFor="sound" className="fw-bold">Choose a type of sound </label>
         <p></p>
         <select name="sound" value={formData.name} onChange={onFormChange} className="btn btn-outline-secondary btn-sm px-4">
@@ -156,7 +148,7 @@ const CustomSoundForm = (props:any) => {
 
         <p></p>
         <label htmlFor="duration" className="fw-bold">Pick your duration (in minutes, 1-20) </label>
-        <input
+        <input 
         type="text"
         name="duration"
         value={formData.duration}
@@ -216,9 +208,7 @@ const CustomSoundForm = (props:any) => {
         <input type="submit" value="Get custom audio!" className="btn btn-outline-secondary btn-lg px-4 fw-bold"/>
         
     </form>
-    </div>
-    </div>
-  </div>
+
     );
 };
 

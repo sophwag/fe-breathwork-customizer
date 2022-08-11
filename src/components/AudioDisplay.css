@@ -5,8 +5,10 @@
     position: relative;
     width: 80px;
     height: 80px;
+    justify-content: center;
 }
 .lds-ring div {
+    justify-content: center;
     box-sizing: border-box;
     display: block;
     position: absolute;
