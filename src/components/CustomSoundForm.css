@@ -1,3 +1,13 @@
-/* select {
+
+.stylized {
     display: block;
-} */
+    margin: auto;
+}
+
+input {
+    color: green
+}
+
+.errorMessages {
+    color: blue;
+}

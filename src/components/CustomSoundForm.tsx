@@ -136,11 +136,11 @@ const CustomSoundForm = (props:any) => {
             }
     };
 
-    return (  
+    return (
     <form className="m-2 p-2 p-md-5" onSubmit={handleSubmit}>
         <label htmlFor="sound" className="fw-bold">Sound </label>
-        <p></p>
-        <select name="sound" value={formData.name} onChange={onFormChange} className="btn btn-outline-secondary btn-sm px-4">
+        {/* <p></p> */}
+        <select name="sound" value={formData.name} onChange={onFormChange} className="btn btn-outline-secondary btn-sm px-4 stylized">
             <option value="piano">Piano</option>
             <option value="synth">Synth</option>
             <option value="airy">Airy</option>
@@ -153,9 +153,9 @@ const CustomSoundForm = (props:any) => {
         name="duration"
         value={formData.duration}
         onChange={onFormChange}
-        className="btn btn-outline-secondary btn-sm px-4"
+        className="btn btn-outline-secondary btn-sm px-4 stylized"
         />
-        <div>{formData.durationError}</div>
+        <div className="errorMessages">{formData.durationError}</div>
 
         <p></p>
         <label htmlFor="patterns" className="fw-bold"> Breathing pattern</label>
@@ -199,16 +199,15 @@ const CustomSoundForm = (props:any) => {
         onClick={onFormChange}
         />
         <label htmlFor="other">Other (e.g., 4-2-10-0) </label>
-        <input id="inputother" type="text" name="otherPattern" onChange={onOtherPatternInputChange} className="btn btn-outline-secondary btn-sm px-4"></input>
+        <input id="inputother" type="text" name="otherPattern" onChange={onOtherPatternInputChange} className="btn btn-outline-secondary btn-sm px-4 stylized"></input>
         
         <p></p>
-        <div>{formData.patternError}</div>
+        <div className="errorMessages">{formData.patternError}</div>
 
         <p></p>
-        <input type="submit" value="Get custom audio" className="btn btn-outline-secondary btn-lg px-4 fw-bold"/>
+        <input type="submit" value="Get custom audio" className="btn btn-outline-secondary btn-lg px-4 fw-bold stylized"/>
         
     </form>
-
     );
 };
 
