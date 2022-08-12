@@ -139,21 +139,25 @@ const CustomSoundForm = (props:any) => {
     return (
     <form className="m-2 p-2 p-md-5" onSubmit={handleSubmit}>
         <label htmlFor="sound" className="fw-bold">Sound </label>
-        {/* <p></p> */}
-        <select name="sound" value={formData.name} onChange={onFormChange} className="btn btn-outline-secondary btn-sm px-4 stylized">
+        <select name="sound"
+        value={formData.name}
+        onChange={onFormChange}
+        className="form-select stylized mediumInput"
+        >
             <option value="piano">Piano</option>
             <option value="synth">Synth</option>
             <option value="airy">Airy</option>
         </select>
 
         <p></p>
-        <label htmlFor="duration" className="fw-bold">Duration (in minutes, 1-20) </label>
+        <label htmlFor="duration" className="fw-bold">Duration (in mins, 1-20) </label>
         <input 
         type="text"
         name="duration"
         value={formData.duration}
         onChange={onFormChange}
-        className="btn btn-outline-secondary btn-sm px-4 stylized"
+        // className="btn btn-outline-secondary btn-sm px-4 stylized"
+        className="form-control stylized narrowInput "
         />
         <div className="errorMessages">{formData.durationError}</div>
 
@@ -199,7 +203,7 @@ const CustomSoundForm = (props:any) => {
         onClick={onFormChange}
         />
         <label htmlFor="other">Other (e.g., 4-2-10-0) </label>
-        <input id="inputother" type="text" name="otherPattern" onChange={onOtherPatternInputChange} className="btn btn-outline-secondary btn-sm px-4 stylized"></input>
+        <input id="inputother" type="text" name="otherPattern" onChange={onOtherPatternInputChange} className="form-control stylized mediumInput "></input>
         
         <p></p>
         <div className="errorMessages">{formData.patternError}</div>

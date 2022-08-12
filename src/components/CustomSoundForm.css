@@ -4,10 +4,17 @@
     margin: auto;
 }
 
-input {
-    color: green
-}
 
 .errorMessages {
     color: blue;
+}
+
+.narrowInput {
+    width: 50px;
+    text-align:center;
+}
+
+.mediumInput {
+    width: 120px;
+    text-align:center;
 }
