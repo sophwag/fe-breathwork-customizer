@@ -137,7 +137,7 @@ const CustomSoundForm = (props:any) => {
     };
 
     return (
-    <form className="m-2 p-2 p-md-5" onSubmit={handleSubmit}>
+    <form className="m-2 p-md-3" onSubmit={handleSubmit}>
         <label htmlFor="sound" className="fw-bold">Sound </label>
         <select name="sound"
         value={formData.name}
