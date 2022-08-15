@@ -50,9 +50,9 @@ function App() {
         <div className="row align-items-center g-lg-5 py-5">
           <div className="col-lg-5 text-center text-lg-start">
             <h1 className="display-4 fw-bold lh-1 mb-3">Breathwork Customizer</h1>
-            <p className="col-lg-10 fs-4">Input your preferences for sound, duration, and breathing pattern, and get a customized guided breathing session. </p>
+            <p className="col-lg-10 fs-4">Custom breathing patterns for people who don't like counting or looking at screens. Pick a sound, duration, and breathing pattern, and get a customized guided breathing session. </p>
           </div>
-          <div className="col-md-10 mx-auto col-lg-6 border rounded-3 bg-light">  
+          <div className="col-md-10 mx-auto col-lg-6 border rounded-4 bg-light">  
         <CustomSoundForm getCustomAudio={getCustomAudio} setAudioStatusDisplay={setAudioStatusDisplay} />
         </div>
     </div>
