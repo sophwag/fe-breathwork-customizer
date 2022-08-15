@@ -41,7 +41,7 @@ const PreFilled = (props: any) => {
     return (
         // source is https://getbootstrap.com/docs/5.2/examples/features/ 
         <div className="container px-4 py-5" id="custom-cards">
-          <h2 className="pb-2 border-bottom sectionTitle">Ready-to-go sessions</h2>
+          <h2 className="pb-2 border-bottom sectionTitle">Popular sessions</h2>
             <div className="row row-cols-1 row-cols-lg-3 align-items-stretch justify-content-center g-4 py-5">
 
               <div className="col justify-content-center align-items-center">
