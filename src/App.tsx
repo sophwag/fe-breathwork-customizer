@@ -3,20 +3,25 @@ import './App.css';
 import {useState} from "react";
 // import {useEffect} from "react";
 import axios from "axios";
-import AudioDisplay from "./components/AudioDisplay";
+// import AudioDisplay from "./components/AudioDisplay";
 import CustomSoundForm from "./components/CustomSoundForm";
 import PreFilled from "./components/PreFilled";
+import AudioModal from "./components/AudioModal";
+
 
 
 
 function App() {
   const [audioStatusDisplay, setAudioStatusDisplay] = useState<any>({status: "idle"});
   const [audioSrc, setAudioSrc] = useState("");
+  const [openModal, setOpenModal] = useState(false);
+
 
   const CUSTOM_AUDIO_URL = "https://backend-breath-capstone.herokuapp.com/custom_audio"
 
   const getCustomAudio = (requestData: any) => {
     setAudioStatusDisplay({status: "awaiting audio"});
+    setOpenModal(true);
     let newRequestData = {pattern: requestData.pattern, sound: requestData.sound, duration: requestData.duration};
     axios({
       url: CUSTOM_AUDIO_URL,
@@ -39,6 +44,7 @@ function App() {
   return (
     <div className="App">
       <header></header>
+      {openModal && <AudioModal audioStatusDisplay={audioStatusDisplay} audioSrc={audioSrc} changeModal={setOpenModal} />}
       <section>
         <div className="container col-xl-10 col-xxl-8 px-4 py-4">
         <div className="row align-items-center g-lg-5 py-5">
@@ -51,8 +57,8 @@ function App() {
         </div>
     </div>
   </div>
-  <AudioDisplay audioStatusDisplay={audioStatusDisplay} audioSrc={audioSrc} />
-  <PreFilled></PreFilled>
+  {/* <AudioDisplay audioStatusDisplay={audioStatusDisplay} audioSrc={audioSrc} /> */}
+  <PreFilled getCustomAudio={getCustomAudio}></PreFilled>
       </section>
     </div>
   );

@@ -1,0 +1,40 @@
+.modalBackground {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: #B1B7D1;
+    z-index: 9999;
+}
+
+.modalContainer {
+    background-color: white;
+    width: 90vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+}
+
+.titleCloseButton {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.titleCloseButton button {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 5px 5px 0 0;
+}
+
+
+.modalContainer .body {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
