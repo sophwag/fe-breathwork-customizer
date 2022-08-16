@@ -98,7 +98,7 @@ const CustomSoundForm = (props:propConfig) => {
         if (!formData.duration || isNaN(formData.duration)) {
             return false
         }
-        else if (formData.duration.includes(".") || Number(formData.duration) === 0 || Number(formData.duration) > 20) {
+        else if (formData.duration.includes(".") || Number(formData.duration) === 0 || Number(formData.duration) > 10) {
             return false
         }
         else {
@@ -112,7 +112,7 @@ const CustomSoundForm = (props:propConfig) => {
 
         let durationValid = validateDurationInput();
         if (!durationValid) {
-            duration_error_msg = "Duration must be a whole number between 1 - 20";
+            duration_error_msg = "Duration must be a whole number between 1 - 10";
         };
 
         let patternValid = validatePatternInput();
@@ -156,7 +156,7 @@ const CustomSoundForm = (props:propConfig) => {
         </select>
 
         <p></p>
-        <label htmlFor="duration" className="fw-bold">Duration (in mins, 1-20) </label>
+        <label htmlFor="duration" className="fw-bold">Duration (in mins, 1-10) </label>
         <input 
         type="text"
         name="duration"
