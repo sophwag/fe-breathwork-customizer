@@ -1,10 +1,12 @@
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './PreFilled.css';
 
+interface propConfig {
+  getCustomAudio: any;
+}
 
 
-
-const PreFilled = (props: any) => {
+const PreFilled = (props: propConfig) => {
     const handleClickSleep = (event: any) => {
         console.log("It clicked")
         let prefilledData = {

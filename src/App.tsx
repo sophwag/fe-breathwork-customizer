@@ -12,14 +12,25 @@ import AudioModal from "./components/AudioModal";
 
 
 function App() {
-  const [audioStatusDisplay, setAudioStatusDisplay] = useState<any>({status: "idle"});
-  const [audioSrc, setAudioSrc] = useState("");
-  const [openModal, setOpenModal] = useState(false);
 
+  interface audioConfig {
+    status?: string;
+    selectedPattern?: string;
+    customPattern?: string;
+    pattern?: string;
+    patternError?: string;
+    sound?: string;
+    duration?: string | number;
+    durationError?: string;
+  }
 
+  const [audioStatusDisplay, setAudioStatusDisplay] = useState<audioConfig>({status: "idle"});
+  const [audioSrc, setAudioSrc] = useState<any>("");
+  const [openModal, setOpenModal] = useState<boolean>(false);
   const CUSTOM_AUDIO_URL = "https://backend-breath-capstone.herokuapp.com/custom_audio"
 
-  const getCustomAudio = (requestData: any) => {
+
+  const getCustomAudio = (requestData: audioConfig) => {
     setAudioStatusDisplay({status: "awaiting audio"});
     setOpenModal(true);
     let newRequestData = {pattern: requestData.pattern, sound: requestData.sound, duration: requestData.duration};
@@ -32,7 +43,7 @@ function App() {
       .then((res: any) => {
         setAudioSrc(URL.createObjectURL(res.data));
         setAudioStatusDisplay(requestData);
-        console.log("Successfully received custom audio")
+        // console.log("Successfully received custom audio")
       })
       .catch((err: any) => {
         console.log(err);

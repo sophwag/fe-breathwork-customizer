@@ -1,17 +1,22 @@
 import { useState } from "react";
 import './CustomSoundForm.css';
 
-const defaultAudio: any = {
-    selectedPattern: "",
-    customPattern: "",
-    pattern: "",
-    patternError: "",
-    sound: "piano",
-    duration: "1",
-    durationError: "",
-};
+interface propConfig {
+    getCustomAudio: any;
+    setAudioStatusDisplay:any;
+}
 
-const CustomSoundForm = (props:any) => {
+const CustomSoundForm = (props:propConfig) => {
+
+    const defaultAudio: any = {
+        selectedPattern: "",
+        customPattern: "",
+        pattern: "",
+        patternError: "",
+        sound: "piano",
+        duration: "1",
+        durationError: "",
+    };
 
     const [formData, setFormData] = useState(defaultAudio);
 
@@ -140,7 +145,6 @@ const CustomSoundForm = (props:any) => {
     <form className="m-2 p-md-3" onSubmit={handleSubmit}>
         <label htmlFor="sound" className="fw-bold">Sound </label>
         <select name="sound"
-        value={formData.name}
         onChange={onFormChange}
         className="form-select stylized mediumInput"
         >

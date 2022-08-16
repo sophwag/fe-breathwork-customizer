@@ -1,8 +1,12 @@
 // import { useState } from "react";
 import './AudioDisplay.css';
 
+interface propConfig {
+    audioStatusDisplay: any;
+    audioSrc: any;
+  }
 
-const AudioDisplay = (props: any) => {
+const AudioDisplay = (props: propConfig) => {
     console.log(props.audioStatusDisplay);
 
     if (props.audioStatusDisplay.status === 'idle') {
