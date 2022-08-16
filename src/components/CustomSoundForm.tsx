@@ -98,7 +98,7 @@ const CustomSoundForm = (props:propConfig) => {
         if (!formData.duration || isNaN(formData.duration)) {
             return false
         }
-        else if (formData.duration.includes(".") || Number(formData.duration) === 0 || Number(formData.duration) > 10) {
+        else if (formData.duration.includes(".") || Number(formData.duration) === 0 || Number(formData.duration) > 5) {
             return false
         }
         else {
@@ -112,7 +112,7 @@ const CustomSoundForm = (props:propConfig) => {
 
         let durationValid = validateDurationInput();
         if (!durationValid) {
-            duration_error_msg = "Duration must be a whole number between 1 - 10";
+            duration_error_msg = "Duration must be a whole number between 1 - 5";
         };
 
         let patternValid = validatePatternInput();
@@ -152,17 +152,17 @@ const CustomSoundForm = (props:propConfig) => {
             <option value="rain">Rain</option>
             <option value="bowl">Singing bowl</option>
             <option value="airy">Airy</option>
+            <option value="silvia">For Silvia</option>
             {/* <option value="synth">Synth</option> */}
         </select>
 
         <p></p>
-        <label htmlFor="duration" className="fw-bold">Duration (in mins, 1-10) </label>
+        <label htmlFor="duration" className="fw-bold">Duration (in mins, 1-5) </label>
         <input 
         type="text"
         name="duration"
         value={formData.duration}
         onChange={onFormChange}
-        // className="btn btn-outline-secondary btn-sm px-4 stylized"
         className="form-control stylized narrowInput "
         />
         <div className="errorMessages">{formData.durationError}</div>
