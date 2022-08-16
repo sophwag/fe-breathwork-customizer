@@ -32,7 +32,7 @@ const PreFilled = (props: propConfig) => {
   const handleClickBalance = (event: any) => {
     console.log("It clicked")
     let prefilledData = {
-      sound: "synth",
+      sound: "rain",
       duration: "4",
       pattern: "6-0-6-0",
       selectedPattern: "resonant"
