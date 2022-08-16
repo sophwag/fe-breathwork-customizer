@@ -138,7 +138,7 @@ const CustomSoundForm = (props:any) => {
 
     return (
     <form className="m-2 p-md-3" onSubmit={handleSubmit}>
-        <label htmlFor="sound" className="fw-bold">Sound: </label>
+        <label htmlFor="sound" className="fw-bold">Sound </label>
         <select name="sound"
         value={formData.name}
         onChange={onFormChange}
@@ -150,7 +150,7 @@ const CustomSoundForm = (props:any) => {
         </select>
 
         <p></p>
-        <label htmlFor="duration" className="fw-bold">Duration (in mins, 1-20): </label>
+        <label htmlFor="duration" className="fw-bold">Duration (in mins, 1-20) </label>
         <input 
         type="text"
         name="duration"
@@ -162,7 +162,7 @@ const CustomSoundForm = (props:any) => {
         <div className="errorMessages">{formData.durationError}</div>
 
         <p></p>
-        <label htmlFor="patterns" className="fw-bold"> Breathing pattern:</label>
+        <label htmlFor="patterns" className="fw-bold"> Breathing pattern</label>
 
         <p></p>
         <input

@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Coiny');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+@import url('https://fonts.googleapis.com/css?family=Karla');
+@import url('https://fonts.googleapis.com/css?family=Rubik+Dirt');
+@import url('https://fonts.googleapis.com/css?family=Titan+One');
+
+
+
 
 
 .App {
   text-align: center;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  font-family:'Karla', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 .App-logo {
@@ -40,11 +47,35 @@
     transform: rotate(360deg);
   }
 }
-
-h1 {
-  /* color:#B1B7D1; */
-  color:#7A6174;
-  /* color: #31589B; */
-  font-family: 'Coiny';
+body {
+  background-image: url("purple_circles.jpg")
 }
 
+h1 {
+  color:#7A6174;
+  font-family: 'Titan One';
+}
+
+h2 {
+  font-family: 'Fredoka One';
+  font-weight: bold;
+}
+
+.gentlecolor {
+  /* background-color: #f8f2ed; */
+  /* background-color: #f9f9f8; */
+  background-color: #f8f3f2;
+  /* background-color: #ffffff; */
+
+}
+
+
+.btn {
+  color: #212529 !important;
+}
+
+.btn:hover, .btn:focus, .btn:active, .btn.active, .open>.dropdown-toggle.btn {
+  color: #ffffff !important;
+  background-color: #7A6174 !important;
+  border-color: #7A6174 !important; 
+}

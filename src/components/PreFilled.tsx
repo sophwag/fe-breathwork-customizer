@@ -40,14 +40,14 @@ const PreFilled = (props: any) => {
 
     return (
         // source is https://getbootstrap.com/docs/5.2/examples/features/ 
-        <div className="container px-4 py-5" id="custom-cards">
-          <h2 className="pb-2 border-bottom sectionTitle">Popular sessions</h2>
-            <div className="row row-cols-1 row-cols-lg-3 align-items-stretch justify-content-center g-4 py-5">
+        <div className="container px-4 py-3" id="custom-cards">
+          <h2 className="pb-2 border-bottom sectionTitle display-6 fw-bold">Popular sessions</h2>
+            <div className="row row-cols-1 row-cols-lg-3 align-items-stretch justify-content-center g-4 py-3">
 
               <div className="col justify-content-center align-items-center">
                   <div onClick={handleClickSleep} className="clickableCard card text-center card-cover overflow-hidden rounded-4 shadow-lg justify-content-center align-items-center">
                     <div className="d-flex flex-column p-5 text-white text-shadow-1">
-                    <h2 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Fall asleep</h2>
+                    <h2 className="pt-5 mt-5 mb-4 display-6 lh-1">Fall asleep</h2>
                     <div className="card-body text-white text-shadow-1">3 mins of 4-7-8-0</div>
                     </div>
                   </div>
@@ -56,7 +56,7 @@ const PreFilled = (props: any) => {
               <div className="col">
                   <div onClick={handleClickFocus} className="clickableCard card card-cover overflow-hidden rounded-4 shadow-lg">
                     <div className="d-flex flex-column p-5 text-white text-shadow-1">
-                    <h2 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Get focused</h2>
+                    <h2 className="pt-5 mt-5 mb-4 display-6 lh-1">Get focused</h2>
                     <div className="card-body text-white text-shadow-1">2 mins of 4-4-4-4</div>
                     </div>
                   </div>
@@ -65,7 +65,7 @@ const PreFilled = (props: any) => {
               <div className="col">
                   <div onClick={handleClickBalance} className="clickableCard card card-cover overflow-hidden rounded-4 shadow-lg">
                     <div className="d-flex flex-column p-5 text-white text-shadow-1">
-                    <h2 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Find balance</h2>
+                    <h2 className="pt-5 mt-5 mb-4 display-6 lh-1">Find balance</h2>
                     <div className="card-body text-white text-shadow-1">4 mins of 6-0-6-0</div>
                     </div>
                   </div>

@@ -5,7 +5,7 @@ import "./AudioModal.css";
 const AudioModal = (props: any) => {
     return (
     <div className="modalBackground">
-      <div className="modalContainer">
+      <div className="modalContainer rounded-4">
         <div className="titleCloseButton">
           <button onClick={() => props.changeModal(false)}> x </button>
         </div>

@@ -10,7 +10,8 @@
 }
 
 .modalContainer {
-    background-color: white;
+    /* background-color: white; */
+    background-image: url("../purple_circles.jpg");
     width: 90vw;
     height: auto;
     display: flex;
