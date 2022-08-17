@@ -6,7 +6,8 @@
 
 
 .errorMessages {
-    color: blue;
+    color: #0a228f;
+    font-weight: bold;
 }
 
 .narrowInput {

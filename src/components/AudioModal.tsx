@@ -13,7 +13,7 @@ const AudioModal = (props: propConfig) => {
     <div className="modalBackground">
       <div className="modalContainer rounded-4">
         <div className="titleCloseButton">
-          <button className="black" onClick={() => props.changeModal(false)}> x </button>
+          <button className="black" onClick={() => props.changeModal(false)}> X </button>
         </div>
         <h1>...breathe...</h1>
         <div className="body">

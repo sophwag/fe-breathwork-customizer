@@ -5,12 +5,11 @@
     justify-content: center;
     display: flex;
     align-items: center;
-    background-color: #7A6174;
+    background-image: url("../dark_circles.jpg");
     z-index: 9999;
 }
 
 .modalContainer {
-    /* background-color: white; */
     background-image: url("../purple_circles.jpg");
     width: 90vw;
     height: auto;

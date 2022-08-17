@@ -1,14 +1,10 @@
 import React from 'react';
 import './App.css';
 import {useState} from "react";
-// import {useEffect} from "react";
 import axios from "axios";
-// import AudioDisplay from "./components/AudioDisplay";
 import CustomSoundForm from "./components/CustomSoundForm";
-import PreFilled from "./components/PreFilled";
+import PreFilledSounds from "./components/PreFilledSounds";
 import AudioModal from "./components/AudioModal";
-
-
 
 
 function App() {
@@ -68,8 +64,7 @@ function App() {
         </div>
     </div>
   </div>
-  {/* <AudioDisplay audioStatusDisplay={audioStatusDisplay} audioSrc={audioSrc} /> */}
-  <PreFilled getCustomAudio={getCustomAudio}></PreFilled>
+    <PreFilledSounds getCustomAudio={getCustomAudio}></PreFilledSounds>
       </section>
     </div>
   );
