@@ -1,5 +1,7 @@
-# Getting Started with Create React App
 
+
+# About
+This is the front-end repo of the breathwork customizer app. This app generates custom audio to guide individuals through breathwork sessions. The back-end is available at https://github.com/sophwag/be-breathapp. 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
