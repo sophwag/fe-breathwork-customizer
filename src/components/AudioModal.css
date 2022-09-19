@@ -5,8 +5,8 @@
     justify-content: center;
     display: flex;
     align-items: center;
-    background-color: #ffffff;
-    background-image: url("../dark_circles.jpg");
+    background-color: #7A6174;
+    /* background-image: url("../dark_circles.jpg"); */
     z-index: 9999;
 }
 
