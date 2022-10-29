@@ -1,8 +1,15 @@
-
-
 # About
 This is the front-end repo of the breathwork customizer app. This app generates custom audio to guide individuals through breathwork sessions. The back-end is available at https://github.com/sophwag/be-breathapp. 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Future goals
+
+Future goals for this project:
+- Improve options for selecting durations (select from scroll instead of type)
+- Add educational components about different breath patterns
+- Implement TypeScript thoroughly
+- Standardize indentation in code
+- See more goals related to backend functionality at the repo, linked above
 
 ## Available Scripts
 
