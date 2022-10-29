@@ -66,6 +66,7 @@ function App() {
   </div>
     <PreFilledSounds getCustomAudio={getCustomAudio}></PreFilledSounds>
       </section>
+      <footer> <p>2022 | Created by Sophia Wagner</p></footer>
     </div>
   );
 }
