@@ -148,10 +148,10 @@ const CustomSoundForm = (props:propConfig) => {
         onChange={onFormChange}
         className="form-select stylized mediumInput"
         >
+            <option value="airy">Airy</option>
             <option value="piano">Piano</option>
             <option value="rain">Rain</option>
             <option value="bowl">Singing bowl</option>
-            <option value="airy">Airy</option>
             <option value="synth">Synth</option>
             {/* <option value="silvia">RIP Ferrari</option> */}
         </select>
