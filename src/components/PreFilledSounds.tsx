@@ -9,7 +9,7 @@ const PreFilledSounds = (props: propConfig) => {
     const handleClickSleep = (event: any) => {
         console.log("It clicked")
         let prefilledData = {
-          sound: "bowl",
+          sound: "airy",
           duration: "3",
           pattern: "4-7-8-0",
           selectedPattern: "relaxation"
@@ -31,7 +31,7 @@ const PreFilledSounds = (props: propConfig) => {
   const handleClickBalance = (event: any) => {
     console.log("It clicked")
     let prefilledData = {
-      sound: "piano",
+      sound: "bowl",
       duration: "4",
       pattern: "6-0-6-0",
       selectedPattern: "resonant"
