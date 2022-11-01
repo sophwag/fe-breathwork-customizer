@@ -13,7 +13,7 @@ const CustomSoundForm = (props:propConfig) => {
         customPattern: "",
         pattern: "",
         patternError: "",
-        sound: "piano",
+        sound: "airy",
         duration: "1",
         durationError: "",
     };
