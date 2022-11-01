@@ -32,7 +32,7 @@ const PreFilledSounds = (props: propConfig) => {
     console.log("It clicked")
     let prefilledData = {
       sound: "bowl",
-      duration: "4",
+      duration: "1",
       pattern: "6-0-6-0",
       selectedPattern: "resonant"
     }
@@ -66,7 +66,7 @@ const PreFilledSounds = (props: propConfig) => {
                   <div onClick={handleClickBalance} className="clickableCard card card-cover overflow-hidden rounded-4 shadow-lg">
                     <div className="d-flex flex-column p-5 text-white text-shadow-1">
                     <h2 className="pt-5 mt-5 mb-4 display-6 lh-1">Find balance</h2>
-                    <div className="card-body text-white text-shadow-1">4 mins of 6-0-6-0</div>
+                    <div className="card-body text-white text-shadow-1">1 min of 6-0-6-0</div>
                     </div>
                   </div>
               </div>
